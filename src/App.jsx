@@ -1,8 +1,10 @@
+import { StateProvider } from "./context/StateContext";
+import Layout from "./pages/Layout";
 function App() {
   return (
-    <>
-      <h1>React App</h1>
-    </>
+    <StateProvider>
+      <Layout />
+    </StateProvider>
   );
 }
 

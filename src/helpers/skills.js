@@ -1,0 +1,18 @@
+export const skills = [
+  "HTML",
+  "CSS",
+  "Javascript",
+  "React",
+  "Redux",
+  "Tailwind",
+  "Bootstrap",
+  "Mobile First",
+  "Responsive Design",
+  "API",
+  "Data Fetching",
+  "MongoDB",
+  "Critical Thinking",
+  "Error Handling",
+  "Async/Await",
+  "Quick Learner",
+];
