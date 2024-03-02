@@ -21,7 +21,7 @@ const workData = [
 
 export default function WorkList() {
   return (
-    <div className="bg-light">
+    <div id="work" className="bg-light">
       <ul>
         <li className="px-4 py-32 flex flex-col items-center gap-4 md:flex-row">
           <div className="w-full h-72 overflow-hidden border-color border-4 mx-4">

@@ -1,6 +1,9 @@
 export default function Hero() {
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div
+      id="home"
+      className="h-screen flex justify-center items-center bg-light"
+    >
       <div className="p-4">
         <h1 className="font-oswald text-6xl sm:text-7xl md:text-8xl">
           Hello, my name is{" "}

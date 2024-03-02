@@ -1,6 +1,9 @@
 export default function AboutMe() {
   return (
-    <div className="bg-light h-screen flex flex-col gap-8 items-center justify-center font-merriweather text-2xl font-light p-4 md:text-4xl md:p-20 sm:text-3xl">
+    <div
+      id="about-me"
+      className="bg-light h-screen flex flex-col gap-8 items-center justify-center font-merriweather text-2xl font-light p-4 md:text-4xl md:p-20 sm:text-3xl"
+    >
       <h2>
         <span className="font-semibold text-color">
           Passionate, designed focused

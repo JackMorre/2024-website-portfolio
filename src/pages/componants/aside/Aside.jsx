@@ -28,11 +28,12 @@ export default function Aside() {
                   key={link.name}
                   name={link.name}
                   customWidth={link.customWidth}
+                  url={link.url}
                 />
               );
             })}
           </ul>
-          <Socials />
+          <Socials isRow={false} />
         </div>
       )}
     </>
