@@ -20,8 +20,10 @@ export default function LinkListItem({ name, customWidth, url }) {
       >
         <button
           className={`font-light text-smd ${
-            desktopMode ? "rotate-[-90deg] pr-4" : ""
-          } ${customWidth ? "w-[94px] " : ""}`}
+            desktopMode
+              ? "rotate-[-90deg] text-nowrap border-b-2 border-light hover:border-color"
+              : ""
+          } ${customWidth ? "" : ""}`}
         >
           {name}
         </button>

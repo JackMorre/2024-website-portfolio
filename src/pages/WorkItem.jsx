@@ -1,3 +1,10 @@
+import { useUi } from "../context/StateContext";
+
 export default function WorkItem() {
-  return <div>WorkItem</div>;
+  const { clickedWork } = useUi();
+  return (
+    <div className="flex justify-center items-center">
+      <p>{clickedWork.name}</p>
+    </div>
+  );
 }

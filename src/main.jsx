@@ -6,6 +6,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Error from "./pages/componants/error/Error.jsx";
 import WorkItem from "./pages/WorkItem.jsx";
+import TheBodega from "./pages/componants/work/TheBodega.jsx";
+import BestGameDeal from "./pages/componants/work/BestGameDeal.jsx";
+import FrontEndMentor from "./pages/componants/work/FrontEndMentor.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,15 +22,15 @@ const router = createBrowserRouter([
       },
       {
         path: "the-bodega",
-        element: <WorkItem />,
+        element: <TheBodega />,
       },
       {
         path: "best-game-deals",
-        element: <WorkItem />,
+        element: <BestGameDeal />,
       },
       {
         path: "frontend-mentor",
-        element: <WorkItem />,
+        element: <FrontEndMentor />,
       },
       {
         path: "/:anything",

@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import Home from "./Home";
-
 import { useUi } from "../context/StateContext";
 import { useWindowSize } from "../pages/hooks/useWindowSize";
 import Header from "./componants/header/Header";
@@ -21,7 +19,7 @@ export default function Layout() {
 
       updateMainWidth(newWidth);
     },
-    [width, onDesktop, offDesktop]
+    [width, onDesktop, offDesktop, updateMainWidth]
   );
 
   useEffect(() => {

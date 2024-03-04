@@ -2,7 +2,7 @@ export default function AboutMe() {
   return (
     <div
       id="about-me"
-      className="bg-light h-screen flex flex-col gap-8 items-center justify-center font-merriweather text-2xl font-light p-4 md:text-4xl md:p-20 sm:text-3xl"
+      className="bg-light flex flex-col gap-8 items-center justify-center font-merriweather text-2xl font-light px-8 py-16 md:text-3xl md:py-20 sm:text-3xl"
     >
       <h2>
         <span className="font-semibold text-color">

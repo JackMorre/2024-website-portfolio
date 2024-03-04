@@ -6,6 +6,7 @@ let initialState = {
   desktopMode: false,
   menuOpen: false,
   mainWidth: "",
+  clickedWork: {},
 };
 
 function reducer(state, action) {
@@ -18,19 +19,22 @@ function reducer(state, action) {
       return { ...state, desktopMode: false, menuOpen: false };
     case "mainWidth/change":
       return { ...state, mainWidth: action.payload };
+    case "clickedWork/update":
+      return { ...state, clickedWork: action.payload };
     default:
       throw new Error("couldn't find action on reducer");
   }
 }
 
 function StateProvider({ children }) {
-  const [{ desktopMode, menuOpen, mainWidth }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [{ desktopMode, menuOpen, mainWidth, clickedWork }, dispatch] =
+    useReducer(reducer, initialState);
 
   const toggleMenu = () => {
     dispatch({ type: "mobileMenu/toggle" });
+  };
+  const updateWork = (work) => {
+    dispatch({ type: "clickedWork/update", payload: work });
   };
   const onDesktop = useCallback(() => {
     dispatch({ type: "desktopMenu/on" });
@@ -38,19 +42,21 @@ function StateProvider({ children }) {
   const offDesktop = useCallback(() => {
     dispatch({ type: "desktopMenu/off" });
   }, []);
-  const updateMainWidth = (width) => {
+  const updateMainWidth = useCallback((width) => {
     dispatch({ type: "mainWidth/change", payload: width });
-  };
+  }, []);
   return (
     <StateContext.Provider
       value={{
         desktopMode,
         menuOpen,
+        clickedWork,
         toggleMenu,
         onDesktop,
         offDesktop,
         updateMainWidth,
         mainWidth,
+        updateWork,
       }}
     >
       {children}
