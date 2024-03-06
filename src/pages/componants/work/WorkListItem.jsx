@@ -9,6 +9,7 @@ export default function WorkListItem({ data }) {
   const navigate = useNavigate();
 
   const handleSeeMore = () => {
+    console.log(data);
     updateWork(data);
     navigate(data.extensionURL);
   };
@@ -17,7 +18,7 @@ export default function WorkListItem({ data }) {
       <div className="w-full h-52 overflow-hidden border-color border-4 mx-4 bg-[#fafafa]">
         <img
           className="w-full h-auto"
-          src={data.desktopImages[0]}
+          src={data.desktopImage}
           alt={`${data.name} webiste`}
         />
       </div>

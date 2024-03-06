@@ -33,9 +33,9 @@ function StateProvider({ children }) {
   const toggleMenu = () => {
     dispatch({ type: "mobileMenu/toggle" });
   };
-  const updateWork = (work) => {
+  const updateWork = useCallback((work) => {
     dispatch({ type: "clickedWork/update", payload: work });
-  };
+  }, []);
   const onDesktop = useCallback(() => {
     dispatch({ type: "desktopMenu/on" });
   }, []);
