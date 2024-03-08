@@ -1,6 +1,12 @@
 import bodega from "../images/the-bodega-norwich.netlify.app_.webp";
 import bestGameDeal from "../images/best-game-deal-app-desktop.webp";
 import frontendMentorLogo from "../images/Frontend_mentor_logo.webp";
+import blogr from "../images/frontend-mentor/blogr-landing-page.webp";
+import interactiveRatingComponent from "../images/frontend-mentor/interactive-rating-component.webp";
+import notificationPage from "../images/frontend-mentor/notification-page.webp";
+import omnifood from "../images/frontend-mentor/omnifood.webp";
+import sunnysideAgencyMain from "../images/frontend-mentor/sunnyside-agency-main.webp";
+import tipCalculator from "../images/frontend-mentor/tip-calculator-app.webp";
 
 export const workData = [
   {
@@ -22,6 +28,7 @@ export const workData = [
     ],
     websiteURL: "https://the-bodega-norwich.netlify.app/",
     githubURL: "https://github.com/JackMorre/The_Bodega",
+    apps: undefined,
     skillsUsed: [
       "HTML",
       "CSS",
@@ -52,6 +59,7 @@ export const workData = [
     ],
     websiteURL: "https://best-game-deal-jack-morrell.netlify.app/",
     githubURL: "https://github.com/JackMorre/game-deal-app",
+    apps: undefined,
     skillsUsed: [
       "React",
       "Redux",
@@ -68,20 +76,69 @@ export const workData = [
     name: "Frontend Mentor",
     smallText:
       "A bunch of apps that was created in work with the website: Frontend Mentor.",
-    longText: [
-      "I was enjoying a day out in my home town and decided to get a delicious sandwich from the market. I was so captivated by The Spamwich(Yes, that it it’s real name). I decided to up The Bodega and saw that they didn’t have a website. This got my mind running about what there website could look like and low and behold, I came up with this.",
-      "Using mainly HTML, CSS and a little Javascript, I was able to create a great website that is on brand for The Bodega and the first official website built from scratch. ",
-    ],
+
     websiteURL: "",
-    githubURL: "https://github.com/JackMorre/game-deal-app",
+    githubURL: "",
+    apps: [
+      {
+        name: "Interactive Rating Component",
+        smallText:
+          "A small component that allows you to rate the service you have recieved that could be implemented into any app",
+        websiteURL: "https://interactive-rating-component-jack.netlify.app/",
+        githubURL:
+          "https://github.com/JackMorre/interactive-rating-component-main",
+        image: interactiveRatingComponent,
+      },
+      {
+        name: "Omni-Food",
+        smallText:
+          "This was a final project on an Udemy course that solidified my CSS and HTML skills",
+        websiteURL: "https://omnifood-jackmorrell.netlify.app/",
+        githubURL: undefined,
+        image: omnifood,
+      },
+      {
+        name: "Notification Drop Down",
+        smallText:
+          "A componant that allows you to see notifications from different users that interacted with your account in some way.",
+        websiteURL: "https://notification-page-jack-morre.netlify.app",
+        githubURL: "https://github.com/JackMorre/notifications-page-main",
+        image: notificationPage,
+      },
+      {
+        name: "Blogr Landing Page",
+        smallText:
+          "Front page of a blog website with drop downs and information about how to get started",
+        websiteURL: "https://blogr-landing-page-jack.netlify.app",
+        githubURL: "https://github.com/JackMorre/blogr-landing-page-main",
+        image: blogr,
+      },
+      {
+        name: "Tip Calculator",
+        smallText:
+          "A small app that allows you to calulate a tip of any price bill that you may have.",
+        websiteURL: "https://tip-calculator-app-jack-morre.netlify.app",
+        githubURL: "https://github.com/JackMorre/tip-calculator-app-main",
+        image: tipCalculator,
+      },
+      {
+        name: "Sunnyside Agency",
+        smallText:
+          "A landing page for a fake buisness that used bright colors to make a bold statement.",
+        websiteURL: "https://sunnyside-agency-main-jackmorre.netlify.app",
+        githubURL:
+          "https://github.com/JackMorre/sunnyside-agency-landing-page-main",
+        image: sunnysideAgencyMain,
+      },
+    ],
     skillsUsed: [],
+    extensionURL: "frontend-mentor",
     desktopImage: [frontendMentorLogo],
   },
 ];
 
 export const checkData = (param) => {
   for (let i = 0; i < workData.length; i++) {
-    console.log(workData[i].extensionURL, param);
     if (workData[i].extensionURL === param) {
       return workData[i];
     }

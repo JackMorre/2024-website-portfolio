@@ -7,6 +7,7 @@ let initialState = {
   menuOpen: false,
   mainWidth: "",
   clickedWork: {},
+  clickedLink: "",
 };
 
 function reducer(state, action) {
@@ -21,20 +22,27 @@ function reducer(state, action) {
       return { ...state, mainWidth: action.payload };
     case "clickedWork/update":
       return { ...state, clickedWork: action.payload };
+    case "clickedLink/update":
+      return { ...state, clickedLink: action.payload };
     default:
       throw new Error("couldn't find action on reducer");
   }
 }
 
 function StateProvider({ children }) {
-  const [{ desktopMode, menuOpen, mainWidth, clickedWork }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    { desktopMode, menuOpen, mainWidth, clickedWork, clickedLink },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   const toggleMenu = () => {
     dispatch({ type: "mobileMenu/toggle" });
   };
   const updateWork = useCallback((work) => {
     dispatch({ type: "clickedWork/update", payload: work });
+  }, []);
+  const updateLink = useCallback((link) => {
+    dispatch({ type: "clickedLink/update", payload: link });
   }, []);
   const onDesktop = useCallback(() => {
     dispatch({ type: "desktopMenu/on" });
@@ -57,6 +65,8 @@ function StateProvider({ children }) {
         updateMainWidth,
         mainWidth,
         updateWork,
+        clickedLink,
+        updateLink,
       }}
     >
       {children}

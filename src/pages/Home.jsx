@@ -5,8 +5,34 @@ import Footer from "./componants/footer/Footer";
 import Hero from "./componants/hero/Hero";
 import Skills from "./componants/skills/Skills";
 import WorkList from "./componants/work/WorkList";
+import { useMotionValueEvent, useScroll } from "framer-motion";
+import { useUi } from "../context/StateContext";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const { updateLink } = useUi();
+  const { scrollY } = useScroll();
+  const [yValue, setYValue] = useState(scrollY.current);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setYValue(latest);
+  });
+
+  useEffect(
+    function () {
+      if (yValue < 400) {
+        updateLink("home");
+      } else if (yValue < 1200) {
+        updateLink("about-me");
+      } else if (yValue < 1950) {
+        updateLink("work");
+      } else if (yValue > 1950) {
+        updateLink("connect");
+      }
+    },
+    [updateLink, yValue]
+  );
+
   return (
     <main>
       <Helmet>
@@ -26,7 +52,6 @@ export default function Home() {
       <Skills />
       <WorkList />
       <Connect />
-      <Footer />
     </main>
   );
 }

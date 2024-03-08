@@ -3,19 +3,28 @@ import { FaAngleRight } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { useUi } from "../../../context/StateContext";
 import { handleOpenTab } from "../../../helpers/handlers";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function WorkListItem({ data }) {
-  const { updateWork } = useUi();
+  const ref = useRef(null);
+  const { updateWork, updateLink } = useUi();
   const navigate = useNavigate();
 
   const handleSeeMore = () => {
-    console.log(data);
+    updateLink("work");
     updateWork(data);
     navigate(data.extensionURL);
   };
   return (
-    <li className="px-4 py-4 flex flex-col items-center gap-4 md:flex-row">
-      <div className="w-full h-52 overflow-hidden border-color border-4 mx-4 bg-[#fafafa]">
+    <motion.li
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      ref={ref}
+      className="px-4 py-4 flex flex-col items-center gap-4 md:flex-row"
+    >
+      <div className="w-full h-52 overflow-hidden mx-4 bg-[#fafafa]">
         <img
           className="w-full h-auto"
           src={data.desktopImage}
@@ -23,10 +32,10 @@ export default function WorkListItem({ data }) {
         />
       </div>
       <div className="w-full mx-4">
-        <h3 className="text-color text-6xl font-oswald font-semibold mb-4 md:text-4xl">
+        <h3 className="text-color text-5xl font-oswald font-semibold mb-4 md:text-4xl">
           {data.name}
         </h3>
-        <p className="font-merriweather text-2xl mb-8 md:text-lg">
+        <p className="font-merriweather text-xl mb-8 md:text-lg">
           {data.smallText}
         </p>
         <div className="flex mt-auto justify-between">
@@ -45,6 +54,6 @@ export default function WorkListItem({ data }) {
           </button>
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 }
