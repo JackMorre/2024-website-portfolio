@@ -8,11 +8,12 @@ export default function LinkListItem({ name, customWidth, url }) {
     useUi();
 
   const handleClick = () => {
+    updateWork(undefined);
     toggleMenu();
   };
 
   const handleDesktopClick = () => {
-    updateWork();
+    updateWork(undefined);
   };
 
   return (
@@ -25,7 +26,7 @@ export default function LinkListItem({ name, customWidth, url }) {
           to={`/#${url}`}
         >
           <button
-            className={`font-light text-sm transition-all ${
+            className={`font-light text-sm transition-all md:text-lg ${
               desktopMode
                 ? `rotate-[-90deg] text-nowrap border-b-2 ${
                     clickedLink === url
@@ -51,7 +52,7 @@ export default function LinkListItem({ name, customWidth, url }) {
           to={`/#${url}`}
         >
           <button
-            className={`font-light text-sm transition-all ${
+            className={`font-light text-sm transition-all md:text-lg ${
               desktopMode
                 ? `rotate-[-90deg] text-nowrap border-b-2 ${
                     clickedLink === url

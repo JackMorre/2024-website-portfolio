@@ -15,7 +15,7 @@ export default function Hero() {
         initial="hidden"
         animate="show"
       >
-        <h1 className="font-oswald text-6xl sm:text-7xl md:text-8xl">
+        <h1 className="font-oswald text-6xl sm:text-7xl md:text-8xl xl:text-[130px]">
           Hello, my name is{" "}
           <span className="text-color font-medium">Jack.</span> <br />
           I'm a{" "}

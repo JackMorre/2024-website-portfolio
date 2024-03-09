@@ -31,7 +31,9 @@ export default function Layout() {
   return (
     <main
       className={` h-screen ${
-        desktopMode ? `w-[calc(100vw-50px)] ml-auto` : "w-full"
+        desktopMode
+          ? `w-[calc(100vw-50px)] xl:w-[calc(100vw-100px)] ml-auto`
+          : "w-full"
       }`}
     >
       <Header />

@@ -24,7 +24,7 @@ export default function WorkListItem({ data }) {
       ref={ref}
       className="px-4 py-4 flex flex-col items-center gap-4 md:flex-row"
     >
-      <div className="w-full h-52 overflow-hidden mx-4 bg-[#fafafa]">
+      <div className="w-full h-52 xl:h-80 overflow-hidden mx-4 bg-[#fafafa]">
         <img
           className="w-full h-auto"
           src={data.desktopImage}
@@ -32,10 +32,10 @@ export default function WorkListItem({ data }) {
         />
       </div>
       <div className="w-full mx-4">
-        <h3 className="text-color text-5xl font-oswald font-semibold mb-4 md:text-4xl">
+        <h3 className="text-color text-5xl font-oswald font-semibold mb-4 md:text-4xl xl:text-7xl">
           {data.name}
         </h3>
-        <p className="font-merriweather text-xl mb-8 md:text-lg">
+        <p className="font-merriweather text-xl mb-8 md:text-lg xl:text-3xl">
           {data.smallText}
         </p>
         <div className="flex mt-auto justify-between">
