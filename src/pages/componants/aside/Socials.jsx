@@ -15,14 +15,18 @@ export default function Socials({ isRow }) {
       }`}
     >
       <li className="text-dark hover:text-color">
-        <button onClick={() => handleOpenTab("https://github.com/JackMorre")}>
+        <button
+          onClick={(e) => handleOpenTab(e, "https://github.com/JackMorre")}
+        >
           <FaGithub
             style={{ height: "30px", width: "30px", color: "inherit" }}
           />
         </button>
       </li>
       <li className="text-dark hover:text-color">
-        <button onClick={() => handleOpenTab("https://twitter.com/Jack_Morre")}>
+        <button
+          onClick={(e) => handleOpenTab(e, "https://twitter.com/Jack_Morre")}
+        >
           <FaTwitter
             style={{ height: "30px", width: "30px", color: "inherit" }}
           />
@@ -30,8 +34,11 @@ export default function Socials({ isRow }) {
       </li>
       <li className="text-dark hover:text-color">
         <button
-          onClick={() =>
-            handleOpenTab("https://www.linkedin.com/in/jack-morrell-bb7a7b124/")
+          onClick={(e) =>
+            handleOpenTab(
+              e,
+              "https://www.linkedin.com/in/jack-morrell-bb7a7b124/"
+            )
           }
         >
           <FaLinkedin

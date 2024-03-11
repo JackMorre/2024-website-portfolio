@@ -11,7 +11,7 @@ export default function Aside() {
         <div
           className={` ${
             desktopMode
-              ? "w-[50px] xl:w-[100px] fixed z-30  border-r-[1px] border-dark top-0 left-0"
+              ? "w-[50px] xl:w-[70px] fixed z-30  border-r-[1px] border-dark top-0 left-0"
               : "fixed top-0 right-0 w-5/6 shadow-[-0px_0px_50px_10px_#0F0E0E] pt-16 z-40 bg-light"
           } h-screen flex flex-col justify-between bg-light`}
         >

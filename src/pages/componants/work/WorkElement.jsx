@@ -35,7 +35,7 @@ export default function WorkElement() {
           <MainHelmet />
           {clickedWork.apps === undefined ? (
             <div className=" py-16  bg-light px-4 flex flex-col gap-4 ">
-              <div className="flex flex-col justify-center items-center gap-8">
+              <div className="flex flex-col justify-center items-center gap-8 pt-10">
                 <Title />
                 <MainImage />
                 <SkillsUsed />

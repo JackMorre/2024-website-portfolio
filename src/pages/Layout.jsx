@@ -32,7 +32,7 @@ export default function Layout() {
     <main
       className={` h-screen ${
         desktopMode
-          ? `w-[calc(100vw-50px)] xl:w-[calc(100vw-100px)] ml-auto`
+          ? `w-[calc(100vw-50px)] xl:w-[calc(100vw-70px)] ml-auto `
           : "w-full"
       }`}
     >

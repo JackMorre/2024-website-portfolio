@@ -46,12 +46,14 @@ export default function WorkListItem({ data }) {
             <span>See more</span>
             <FaAngleRight />
           </button>
-          <button
-            onClick={(e) => handleOpenTab(e, data.websiteURL)}
-            className="text-color bg-light hover:text-light hover:bg-color w-8 h-8 rounded-full flex items-center justify-center"
-          >
-            <FaRegShareFromSquare style={{ color: "inherit" }} />
-          </button>
+          {data.websiteURL ? (
+            <button
+              onClick={(e) => handleOpenTab(e, data.websiteURL)}
+              className="text-color bg-light hover:text-light hover:bg-color w-8 h-8 rounded-full flex items-center justify-center"
+            >
+              <FaRegShareFromSquare style={{ color: "inherit" }} />
+            </button>
+          ) : null}
         </div>
       </div>
     </motion.li>

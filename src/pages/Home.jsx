@@ -1,36 +1,38 @@
 import { Helmet } from "react-helmet";
 import AboutMe from "./componants/about-me/AboutMe";
 import Connect from "./componants/connect/Connect";
-import Footer from "./componants/footer/Footer";
 import Hero from "./componants/hero/Hero";
 import Skills from "./componants/skills/Skills";
 import WorkList from "./componants/work/WorkList";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useUi } from "../context/StateContext";
 import { useEffect, useState } from "react";
+import { useWindowSize } from "./hooks/useWindowSize";
 
 export default function Home() {
   const { updateLink } = useUi();
   const { scrollY } = useScroll();
-  const [yValue, setYValue] = useState(scrollY.current);
+  const [, heightWindow] = useWindowSize();
+  const [yValue, setYValue] = useState(scrollY.current + heightWindow);
 
+  const height = document.body.scrollHeight;
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setYValue(latest);
+    setYValue(latest + heightWindow);
   });
 
   useEffect(
     function () {
-      if (yValue < 400) {
+      if (yValue < heightWindow + heightWindow / 2) {
         updateLink("home");
-      } else if (yValue < 1200) {
+      } else if (yValue < heightWindow * 2 + heightWindow / 2) {
         updateLink("about-me");
-      } else if (yValue < 1950) {
+      } else if (yValue < height - 100) {
         updateLink("work");
-      } else if (yValue > 1950) {
+      } else if (yValue > height - 100) {
         updateLink("connect");
       }
     },
-    [updateLink, yValue]
+    [updateLink, yValue, height, heightWindow]
   );
 
   return (
