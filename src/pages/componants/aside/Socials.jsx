@@ -8,9 +8,9 @@ export default function Socials({ isRow }) {
   const { desktopMode } = useUi();
   return (
     <ul
-      className={`flex gap-2  ${
+      className={`flex gap-4  ${
         desktopMode
-          ? `flex-col items-center ${isRow ? "sm:flex-row" : "mb-6"}`
+          ? `flex-col items-center ${isRow ? "sm:flex-row gap-4" : "mb-6"}`
           : "flex-row mx-auto p-4 justify-center"
       }`}
     >
