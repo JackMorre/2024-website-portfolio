@@ -30,7 +30,7 @@ export default function Layout() {
   useEffect(function () {}, []);
   return (
     <main
-      className={` h-screen ${
+      className={` h-screen bg-light ${
         desktopMode
           ? `w-[calc(100vw-50px)] xl:w-[calc(100vw-70px)] ml-auto `
           : "w-full"
