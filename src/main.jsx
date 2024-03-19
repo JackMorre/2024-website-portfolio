@@ -32,14 +32,15 @@ const router = createBrowserRouter([
         element: <WorkElement name="frontend-mentor" />,
         errorElement: <Error />,
       },
-      {
-        path: "/sitemap.xml",
-      },
+
       {
         path: "*",
         element: <Error />,
       },
     ],
+  },
+  {
+    path: "/sitemap.xml",
   },
 ]);
 
