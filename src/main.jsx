@@ -33,6 +33,9 @@ const router = createBrowserRouter([
         errorElement: <Error />,
       },
       {
+        path: "/sitemap.xml",
+      },
+      {
         path: "*",
         element: <Error />,
       },
