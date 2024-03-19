@@ -18,13 +18,23 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/#about-me",
-        element: <Home />,
+        path: "/the-bodega",
+        element: <WorkElement name="the-bodega" />,
+        errorElement: <Error />,
       },
       {
-        path: "/:work",
-        element: <WorkElement />,
+        path: "/best-game-deal",
+        element: <WorkElement name="best-game-deal" />,
         errorElement: <Error />,
+      },
+      {
+        path: "/frontend-mentor",
+        element: <WorkElement name="frontend-mentor" />,
+        errorElement: <Error />,
+      },
+      {
+        path: "*",
+        element: <Error />,
       },
     ],
   },

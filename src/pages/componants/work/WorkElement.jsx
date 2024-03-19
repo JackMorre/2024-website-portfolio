@@ -13,16 +13,16 @@ import SkillsUsed from "./SkillsUsed";
 import LongText from "./LongText";
 import DirectLinks from "./DirectLinks";
 
-export default function WorkElement() {
+export default function WorkElement({ name }) {
   const { clickedWork, updateWork } = useUi();
 
   const { work } = useParams();
 
   useEffect(
     function () {
-      updateWork(checkData(work));
+      updateWork(checkData(name));
     },
-    [updateWork, work]
+    [updateWork, name]
   );
 
   return (
