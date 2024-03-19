@@ -18,6 +18,10 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/#about-me",
+        element: <Home />,
+      },
+      {
         path: "/:work",
         element: <WorkElement />,
         errorElement: <Error />,
