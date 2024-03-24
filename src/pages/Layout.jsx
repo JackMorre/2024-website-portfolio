@@ -24,7 +24,7 @@ export default function Layout() {
 
   useEffect(() => {
     const body = document.querySelector("body");
-    body.style.overflow = desktopMode ? "auto" : menuOpen ? "hidden" : "auto";
+    body.style.overflow = desktopMode ? "scroll" : menuOpen ? "hidden" : "auto";
   }, [menuOpen, desktopMode]);
 
   useEffect(function () {}, []);
