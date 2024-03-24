@@ -7,7 +7,7 @@ export default function Header() {
   const { menuOpen, toggleMenu, desktopMode } = useUi();
   return (
     <header
-      className={`w-full sm:w-[calc(100vw-50px)] fixed top-0 right-0 flex z-10 items-center justify-center bg-light h-[10%]`}
+      className={`w-full sm:w-[calc(100vw-50px)] fixed top-0 right-0 flex z-10 items-center justify-center bg-light h-[100px]`}
     >
       <img className="w-8" src={logo} alt="jack morrell logo" />
       {!desktopMode && (
